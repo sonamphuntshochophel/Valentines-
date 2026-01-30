@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Passang & Sonam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffafc;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .lock {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fdeff2, #f9f3ff);
+      padding: 20px;
+    }
+
+    .lock-box {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .lock-box h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      background: #f3a6b1;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: #e26a6a;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .site {
+      display: none;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1em;
+      opacity: 0.8;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery div {
+      background: #f5f5f5;
+      border-radius: 12px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<div class="lock" id="lock">
+  <div class="lock-box">
+    <h2>Private Space 💗</h2>
+    <p>Only for Passang & Sonam</p>
+    <input type="password" id="password" placeholder="Enter password"/>
+    <button onclick="unlock()">Enter</button>
+    <div class="error" id="error"></div>
+  </div>
+</div>
+
+<div class="site" id="site">
+  <header>
+    <h1>Passang Lhamo & Sonam Phuntsho Chophel</h1>
+    <p>Two hearts, one quiet forever</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Our Story</h2>
+      <p>
+        We didn’t just meet — we found each other.  
+        In small moments, soft conversations, and shared silences,
+        love slowly chose us.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Love Letters</h2>
+      <p>
+        Loving you feels like coming home.  
+        Every version of life is softer when I imagine it with you.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Our Memories</h2>
+      <div class="gallery">
+        <div>Photo 1</div>
+        <div>Photo 2</div>
+        <div>Photo 3</div>
+        <div>Photo 4</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Forever</h2>
+      <p>
+        No matter where life takes us,  
+        this love will always be ours.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Made with love 🤍
+  </footer>
+</div>
+
+<script>
+  const PASSWORD = "forever";
+
+  function unlock() {
+    const input = document.getElementById("password").value;
+    if (input === PASSWORD) {
+      document.getElementById("lock").style.display = "none";
+      document.getElementById("site").style.display = "block";
+    } else {
+      document.getElementById("error").innerText = "Wrong password 💔";
+    }
+  }
+</script>
+
+</body>
+</html>
